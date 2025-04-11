@@ -28,9 +28,10 @@ jobs:
       run: mvn -T ${{ steps.cpu-cores.outputs.count }} clean -DskipTests
     - name: List files in the repository
       run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/server
+          ls ${{ github.workspace }}/server/target
       
     - name: Upload results
       uses: actions/upload-artifact@v4
       with:
-          path: ./server/target/kkFileView-*.*
+          path: server/target/kkFileView-*.*
