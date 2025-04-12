@@ -30,8 +30,8 @@ jobs:
     #  run: |
     #      ls ${{ github.workspace }}/server/target
       
-    - name: Upload kkFileView-*.jar
+    - name: Upload kkFileView
       uses: actions/upload-artifact@v4
       with:
           name: kkFileView
-          path: server/target
+          path: server/target/kkFileView-*
