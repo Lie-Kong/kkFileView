@@ -26,11 +26,24 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -T ${{ steps.cpu-cores.outputs.count }} clean package -Dmaven.test.skip=true
-    - name: List files in the repository
-      run: |
-          ls ${{ github.workspace }}/server/target
+    #- name: List files in the repository
+    #  run: |
+    #      ls ${{ github.workspace }}/server/target
       
-#    - name: Upload results
-#      uses: actions/upload-artifact@v4
-#      with:
-#          path: server/target/kkFileView-*.*
+    - name: Upload kkFileView-*.jar
+      uses: actions/upload-artifact@v4
+      with:
+          path: server/target/kkFileView-*.jar
+    - name: Upload kkFileView-*.jar.original
+      uses: actions/upload-artifact@v4
+      with:
+          path: server/target/kkFileView-*.jar.original
+    
+    - name: Upload kkFileView-*.zip
+      uses: actions/upload-artifact@v4
+      with:
+          path: server/target/kkFileView-*.zip
+    - name: Upload kkFileView-*.tar,gz
+      uses: actions/upload-artifact@v4
+      with:
+          path: server/target/kkFileView-*.tar,gz
