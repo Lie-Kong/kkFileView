@@ -33,17 +33,5 @@ jobs:
     - name: Upload kkFileView-*.jar
       uses: actions/upload-artifact@v4
       with:
-          path: server/target/kkFileView-*.jar
-    - name: Upload kkFileView-*.jar.original
-      uses: actions/upload-artifact@v4
-      with:
-          path: server/target/kkFileView-*.jar.original
-    
-    - name: Upload kkFileView-*.zip
-      uses: actions/upload-artifact@v4
-      with:
-          path: server/target/kkFileView-*.zip
-    - name: Upload kkFileView-*.tar,gz
-      uses: actions/upload-artifact@v4
-      with:
-          path: server/target/kkFileView-*.tar,gz
+          name: kkFileView
+          path: server/target
